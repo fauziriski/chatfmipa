@@ -54,8 +54,8 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/admin.php'));
 
             Route::middleware('web','auth','role:dosen')
-                ->prefix('dosen')
-                ->name('dosen.')
+                ->prefix('dsn')
+                ->name('dsn.')
                 ->namespace($this->namespace. '\Dosen')
                 ->group(base_path('routes/dosen.php'));
         });

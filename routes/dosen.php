@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Dosen\HomeController;
+use App\Http\Controllers\Dosen\ConsultationController;
+use App\Http\Controllers\Dosen\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,3 +15,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/', [HomeController::class, 'index']);
+
+//Konsultasi
+Route::get('/consultation', [ConsultationController::class, 'index']);
+Route::get('/consultation/show', [ConsultationController::class, 'show']);
+Route::get('/consultation/create', [ConsultationController::class, 'create']);
+
+Route::get('/profile', [ProfileController::class, 'profile']);
+Route::get('/password', [ProfileController::class, 'password']);

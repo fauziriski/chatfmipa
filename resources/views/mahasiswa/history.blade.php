@@ -22,54 +22,33 @@
                             <th>NPM</th>
                             <th>Nama Mahasiswa</th>
                             <th>NIP</th>
-                            <th>Nama Pembimbing</th>
+                            <th>Dosen</th>
                             <th>Topik</th>
                             <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($chat as $item)
                         <tr>
-                            <td>1</td>
+                            <td>{{ $i++ }}</td>
                             <td>1717051029</td>
-                            <td>Fauzi Riski</td>
+                            <td>{{ $item->from->name }}</td>
                             <td>198808072019031011</td>
-                            <td>Rizky Prabowo, M.Kom., M.Kom.</td>
-                            <td>Permintaan Validasi KRS</td>
+                            <td>{{ $item->to->name }}</td>
+                            <td>{{ $item->topic }}</td>
+                            @if ($item->status == '1')
+                            <td>Sedang Berjalan</td>
+                            @else
                             <td>Selesai</td>
-                            <td><a href="/mhs/consultation/show" class="btn btn-success btn-sm">
-                                    <i class="fas fas fa-eye"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>1717051031</td>
-                            <td>Fauzi Riski</td>
-                            <td>198808072019031011</td>
-                            <td>Rizky Prabowo, M.Kom., M.Kom.</td>
-                            <td>Permintaan Validasi KRS</td>
-                            <td>Selesai</td>
-                            <td>                                
-                                <a href="/mhs/consultation/show" class="btn btn-success btn-sm">
-                                    <i class="fas fas fa-eye"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>1717051032</td>
-                            <td>Fauzi Riski</td>
-                            <td>198808072019031011</td>
-                            <td>Rizky Prabowo, M.Kom., M.Kom.</td>
-                            <td>Permintaan Validasi KRS</td>
-                            <td>Selesai</td>
+                            @endif
                             <td>
-                                <a href="/mhs/consultation/show" class="btn btn-success btn-sm">
-                                    <i class="fas fas fa-eye"></i>
+                                <a href="/mhs/consultation/show/{{ $item->id }}" class="btn btn-success btn-sm">
+                                <i class="fas fas fa-eye"></i>
                                 </a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

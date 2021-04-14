@@ -28,8 +28,10 @@ Route::get('/mhs', [HomeController::class, 'index']);
 
 //Konsultasi
 Route::get('/mhs/consultation', [ConsultationController::class, 'index']);
-Route::get('/mhs/consultation/show', [ConsultationController::class, 'show']);
+Route::get('/mhs/consultation/show/{id}', [ConsultationController::class, 'show']);
 Route::get('/mhs/consultation/create', [ConsultationController::class, 'create']);
+Route::post('/mhs/consultation/store', [ConsultationController::class, 'store']);
+Route::post('/mhs/consultation/mhs/store', [ConsultationController::class, 'storeMhs']);
 
 Route::get('/mhs/profile', [ProfileController::class, 'profile']);
 Route::get('/mhs/password', [ProfileController::class, 'password']);

@@ -26,27 +26,27 @@
                                         <div class="col-md-6">
                                             <div class="row mt-2">
                                                 <div class="font-weight-bold col-md-6">Mahasiswa</div>
-                                                <div class="col-md-6">1717051029 - Fauzi Riski</div>
+                                                <div class="col-md-6">1717051029 - {{ $chat->from_name }}</div>
                                             </div>
                                             <div class="row mt-2">
                                                 <div class="font-weight-bold col-md-6">Dosen</div>
-                                                <div class="col-md-6">198808072019031011 - Rizky Prabowo, M.Kom., M.Kom.</div>
+                                                <div class="col-md-6">198808072019031011 - {{ $chat->to_name }}</div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="row mt-2">
                                                 <div class="font-weight-bold col-md-6">Topik</div>
-                                                <div class="col-md-6">Permintaan Validasi KRS</div>
+                                                <div class="col-md-6">{{ $chat->topic }}</div>
                                             </div>
                                             <div class="row mt-2">
                                                 <div class="font-weight-bold col-md-6">Keterangan</div>
                                                 <div class="col-md-6">
-                                                    Assalamualaikum pak, mohon maaf, saya ingin membalidasi KRS saya pak, terima kasih pak sebelumnya
+                                                    {{ $chat->information }}
                                                 </div>
                                             </div>
                                             <div class="row mt-2">
                                                 <div class="font-weight-bold col-md-6">Tanggal Konsultasi</div>
-                                                <div class="col-md-6">30 Maret 2021</div>
+                                                <div class="col-md-6">{{ $chat->created_at }}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -59,26 +59,28 @@
                                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                   <div class="modal-content">
-                                                    <div class="modal-header">
-                                                      <h5 class="modal-title" id="exampleModalLabel">Tambah Pesan Konsultasi</h5>
-                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                      </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form>
+                                                    <form method="POST" action="/mhs/consultation/mhs/store">
+                                                        @csrf
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Tambah Pesan Konsultasi</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
                                                             <div class="form-group">
                                                                 <div class="form-group">
+                                                                    <input type="hidden" name="invoice" value="{{ $chat->invoice }}">
                                                                     <label for="exampleFormControlTextarea1">Pesan</label>
-                                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                                    <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
                                                                 </div>
                                                             </div>
-                                                        </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                      <button type="button" class="btn btn-success">Tambah</button>
-                                                    </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-success">Tambah</button>
+                                                        </div>
+                                                    </form>
                                                   </div>
                                                 </div>
                                               </div>
@@ -89,37 +91,42 @@
 
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="row justify-content-start">
-                                                <div class="col-md-7 p-3 mt-2" style="border-radius:30px; border-top-left-radius: 0px;  background-color: #D9EDF7">
-                                                    <div class="row justify-content-between ">
+                                            @foreach ($message as $item)
+                                            @if ($item->from_id == Auth::user()->id)
+                                            <div class="row justify-content-end">
+                                                <div class="col-md-7 col-sm-3 p-3 mt-2 mr-0" style="right: 0;border-radius:50px; border-top-right-radius: 0px;  background-color: #dff0d8">
+                                                    <div class="row justify-content-between">
                                                         <div class="col-md-9">
-                                                            <p class="text-dark" id="name_dosen">198808072019031011 - Rizky Prabowo, M.Kom., M.Kom.</p>
+                                                            <p class="text-dark" id="name_dosen">1717051029 - {{ $item->from->name }}</p>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <p class="text-dark" id="date_chat">30 Maret 2021, 11:47:45</p>
+                                                            <p class="text-dark" id="date_chat">{{ $item->created_at }}</p>
                                                         </div>
                                                         <div class="col-md-12">
-                                                            <p class="text-dark font-weight-bold text" id="dosen_text">okey segera saya validasi</p>
+                                                            <p class="text-dark font-weight-bold text" id="dosen_text">{{ $item->text }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @else
+                                            <div class="row justify-content-start">
+                                                <div class="col-md-7 col-sm-7 p-3 mt-2" style="border-radius:50px; border-top-left-radius: 0px;  background-color: #D9EDF7">
+                                                    <div class="row justify-content-between ">
+                                                        <div class="col-md-9">
+                                                            <p class="text-dark" id="name_dosen">198808072019031011 - {{ $item->to->name }}</p>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <p class="text-dark" id="date_chat">{{ $item->created_at }}</p>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <p class="text-dark font-weight-bold text" id="dosen_text">{{ $item->text }}</p>
                                                         </div>
                                                     </div>
                                                     
                                                 </div>
                                             </div>
-                                            <div class="row justify-content-end">
-                                                <div class="col-md-7 p-3 mt-2 mr-0" style="right: 0;border-radius:30px; border-top-right-radius: 0px;  background-color: #dff0d8">
-                                                    <div class="row justify-content-between">
-                                                        <div class="col-md-9">
-                                                            <p class="text-dark" id="name_dosen">198808072019031011 - Rizky Prabowo, M.Kom., M.Kom.</p>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <p class="text-dark" id="date_chat">30 Maret 2021, 11:47:45</p>
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <p class="text-dark font-weight-bold text" id="dosen_text">okey segera saya validasi</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            @endif
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>

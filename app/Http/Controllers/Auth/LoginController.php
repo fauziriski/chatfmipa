@@ -45,10 +45,19 @@ class LoginController extends Controller
 
       Alert::success('Berhasil Masuk');
 
+      if($user->hasRole('user'))
+      {
+        return redirect('/mhs');
+      }
+      
+      if($user->hasRole('dosen'))
+      {
+        return redirect('/dsn');
+      }
 
       if($user->hasRole('admin'))
       {
-        return redirect()->route('admin.dashboard');
+        return redirect('/akses-admin');
       }
     }
 

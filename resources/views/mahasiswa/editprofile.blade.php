@@ -27,19 +27,19 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="font-weight-bold" for="name">Nama</label>
-                                                    <input type="text" class="form-control" id="name" value="Fauzi Riski">
+                                                    <input type="text" class="form-control" id="name" value="{{ Auth::user()->name }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="font-weight-bold" for="npm">NPM</label>
-                                                    <input type="number" class="form-control" id="npm">
+                                                    <input type="number" class="form-control" id="npm" value="1717051029">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="font-weight-bold" for="email">Email</label>
-                                                    <input type="email" class="form-control" id="email">
+                                                    <input type="email" class="form-control" id="email" value="{{ Auth::user()->email }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">

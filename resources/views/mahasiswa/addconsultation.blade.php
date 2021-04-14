@@ -22,39 +22,42 @@
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <form>
+                                    <form method="POST" action="/mhs/consultation/store">
+                                        @csrf
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="font-weight-bold" for="exampleInputEmail1">Nama Dosen </label>
-                                                    <select id="inputState" class="form-control">
-                                                        <option selected>Choose...</option>
-                                                        <option>...</option>
+                                                    <select id="inputState" name="dosen_id" class="form-control">
+                                                        <option selected="true" disabled="disabled">Choose...</option>
+                                                        @foreach ($user as $item)
+                                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                                        @endforeach
                                                       </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            {{-- <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="font-weight-bold" for="date_consul">Tanggal Konsultasi</label>
                                                     <input type="date" class="form-control" id="date_consul">
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="font-weight-bold" for="topic">Topik</label>
-                                                    <input type="text" class="form-control" id="topic">
+                                                    <input type="text" class="form-control" name="topic" id="topic">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="font-weight-bold" for="information">Keterangan</label>
-                                                    <textarea class="form-control" id="information" rows="3"></textarea>
+                                                    <textarea class="form-control" id="information" name="information" rows="3"></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="font-weight-bold" for="message">Pesan</label>
-                                                    <textarea class="form-control" id="message" rows="3"></textarea>
+                                                    <textarea class="form-control" id="message" name="message" rows="3"></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
