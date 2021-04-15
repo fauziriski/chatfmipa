@@ -30,7 +30,8 @@ class ConsultationController extends Controller
 
     public function create()
     {
-        $dosen = DB::table('model_has_roles')->where('role_id', 3)->get();
+        $role = DB::table('roles')->where('name', 'dosen')->first();
+        $dosen = DB::table('model_has_roles')->where('role_id', $role->id)->get();
         
         $user = array();
 
