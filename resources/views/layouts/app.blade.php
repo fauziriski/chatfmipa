@@ -18,6 +18,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style>
+        .form-group.required .control-label:after {
+            content:" *";
+            color:red;
+        }
+    </style>
 </head>
 <body>
     @include('sweetalert::alert')
