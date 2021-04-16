@@ -62,12 +62,42 @@ https://templatemo.com/tm-516-known
                          <li><a href="http://unila.ac.id/" class="smoothScroll">Unila</a></li>
                          <li><a href="https://fmipa.unila.ac.id/kontak/" class="smoothScroll">Kontak</a></li>
                          <li><a href="http://jurnal.fmipa.unila.ac.id/" class="smoothScroll">E-Jurnal</a></li>
-                         <li><a href="{{ route('login') }}" class="smoothScroll">Masuk</a></li>
-                         
+                         <li><a href="#"><i class="fa fa-phone"></i> +62 721 704625</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                         <li><a href="#"><i class="fa fa-phone"></i> +62 721 704625</a></li>
+                        
+                         @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Masuk') }}</a>
+                                </li>
+                            @endif
+                            
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Daftar') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
                     </ul>
                </div>
 
@@ -221,9 +251,41 @@ https://templatemo.com/tm-516-known
                                     </span>
                                 @enderror
 
+                                <input id="npm" type="number" required class="form-control @error('npm') is-invalid @enderror" name="npm" value="{{ old('npm') }}" placeholder="NPM" required autocomplete="npm">
+
+                              @error('npm')
+                              <span class="invalid-feedback" role="alert">
+                                   <strong>{{ $message }}</strong>
+                              </span>
+                              @enderror
+
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required autocomplete="email">
 
                                 @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+                                <input id="no_telp" type="number" required class="form-control @error('no_telp') is-invalid @enderror" name="no_telp" placeholder="No Telp" value="{{ old('no_telp') }}" required autocomplete="no_telp">
+
+                              @error('no_telp')
+                              <span class="invalid-feedback" role="alert">
+                                   <strong>{{ $message }}</strong>
+                              </span>
+                              @enderror
+
+                              <input id="dosen_pa" type="text" required class="form-control @error('dosen_pa') is-invalid @enderror" name="dosen_pa" value="{{ old('dosen_pa') }}" placeholder="Dosen PA" required autocomplete="dosen_pa">
+
+                              @error('dosen_pa')
+                              <span class="invalid-feedback" role="alert">
+                                   <strong>{{ $message }}</strong>
+                              </span>
+                              @enderror
+
+                              <input id="dosen_ta" type="text" class="form-control @error('dosen_ta') is-invalid @enderror" name="dosen_ta" value="{{ old('dosen_ta') }}" placeholder="Dosen TA/Skripsi/Tesis" required autocomplete="dosen_ta">
+
+                                @error('dosen_ta')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

@@ -118,11 +118,11 @@ https://templatemo.com/tm-516-known
   }
 
   .entry-form {
-    background: #252020;
+    background: #3f51b5;
     text-align: center;
     padding: 6em;
     width: 450px;
-    height: 550px;
+    height: 750px;
   }
 
   .entry-form h2 {
@@ -131,13 +131,16 @@ https://templatemo.com/tm-516-known
   }
 
   .entry-form .form-control {
-    background: transparent;
+    background: white;
     border: 0;
     border-bottom: 1px solid;
     border-radius: 0;
     box-shadow: none;
     height: 45px;
     margin: 10px 0;
+    border-radius: 25px;
+  border: 2px solid whitesmoke;
+
   }
 
   .entry-form .submit-btn {
