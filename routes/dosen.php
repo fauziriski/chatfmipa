@@ -25,4 +25,6 @@ Route::get('/consultation/create', [ConsultationController::class, 'create']);
 Route::post('/consultation/dsn/store', [ConsultationController::class, 'storeDsn']);
 
 Route::get('/profile', [ProfileController::class, 'profile']);
+Route::post('/profile/update', [ProfileController::class, 'profileUpdate']);
 Route::get('/password', [ProfileController::class, 'password']);
+Route::post('/password/update', [ProfileController::class, 'passwordUpdate']);

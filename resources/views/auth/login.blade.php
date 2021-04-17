@@ -90,7 +90,7 @@ https://templatemo.com/tm-516-known
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: white">{{ $message }}</strong>
                                     </span>
                                 @enderror
 
@@ -98,7 +98,7 @@ https://templatemo.com/tm-516-known
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: white">{{ $message }}</strong>
                                     </span>
                                 @enderror
                                    <button class="submit-btn form-control" id="form-submit">Masuk</button>

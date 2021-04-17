@@ -25,7 +25,9 @@ class User extends Authenticatable
         'npm_nisn', 
         'phone', 
         'dosen_pa', 
-        'dosen_ta'
+        'dosen_ta',
+        'ps',
+        'gender',
     ];
 
     /**

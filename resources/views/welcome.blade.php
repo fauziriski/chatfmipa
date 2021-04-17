@@ -247,7 +247,7 @@ https://templatemo.com/tm-516-known
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: white">{{ $message }}</strong>
                                     </span>
                                 @enderror
 
@@ -255,7 +255,7 @@ https://templatemo.com/tm-516-known
 
                               @error('npm')
                               <span class="invalid-feedback" role="alert">
-                                   <strong>{{ $message }}</strong>
+                                   <strong style="color: white">{{ $message }}</strong>
                               </span>
                               @enderror
 
@@ -263,15 +263,48 @@ https://templatemo.com/tm-516-known
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: white">{{ $message }}</strong>
                                     </span>
                                 @enderror
+                              
+                                <select name="ps" id="ps" class="form-control @error('ps') is-invalid @enderror" name="ps" value="{{ old('ps') }}" placeholder="Program Studi" required autocomplete="ps">
+                                   <option selected="true" disabled="disabled">Program Studi...</option>
+                                   <option value="S1 Ilmu Komputer">S1 Ilmu Komputer</option>
+                                   <option value="D3 Manajemen Informatika">D3 Manajemen Informatika</option>
+                                   <option value="S1 Fisika">S1 Fisika</option>
+                                   <option value="S2 Fisika">S2 Fisika</option>
+                                   <option value="S1 Matematika">S1 Matematika</option>
+                                   <option value="S2 Matematika">S2 Matematika</option>
+                                   <option value="S1 Kimia">S1 Kimia</option>
+                                   <option value="S2 Kimia">S2 Kimia</option>
+                                   <option value="S1 Biologi">S1 Biologi</option>
+                                   <option value="S2 Biologi">S2 Biologi</option>
+                                 </select>
+
+                                @error('ps')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong style="color: white">{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+                              <select name="gender" id="gender" class="form-control @error('gender') is-invalid @enderror" name="gender" 
+                              value="{{ old('gender') }}" placeholder="Jenis Kelamin" required autocomplete="gender">
+                                   <option selected="true" disabled="disabled">Jenis Kelamin...</option>
+                                   <option value="Laki-laki">Laki-laki</option>
+                                   <option value="Perempuan">Perempuan</option>
+                              </select>
+
+                              @error('gender')
+                                   <span class="invalid-feedback" role="alert">
+                                   <strong style="color: white">{{ $message }}</strong>
+                                   </span>
+                              @enderror
 
                                 <input id="no_telp" type="number" required class="form-control @error('no_telp') is-invalid @enderror" name="no_telp" placeholder="No Telp" value="{{ old('no_telp') }}" required autocomplete="no_telp">
 
                               @error('no_telp')
                               <span class="invalid-feedback" role="alert">
-                                   <strong>{{ $message }}</strong>
+                                   <strong style="color: white">{{ $message }}</strong>
                               </span>
                               @enderror
 
@@ -279,7 +312,7 @@ https://templatemo.com/tm-516-known
 
                               @error('dosen_pa')
                               <span class="invalid-feedback" role="alert">
-                                   <strong>{{ $message }}</strong>
+                                   <strong style="color: white">{{ $message }}</strong>
                               </span>
                               @enderror
 
@@ -287,7 +320,7 @@ https://templatemo.com/tm-516-known
 
                                 @error('dosen_ta')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: white">{{ $message }}</strong>
                                     </span>
                                 @enderror
 
@@ -295,7 +328,7 @@ https://templatemo.com/tm-516-known
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: white">{{ $message }}</strong>
                                     </span>
                                 @enderror
 

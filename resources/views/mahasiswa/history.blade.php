@@ -25,6 +25,7 @@
                             <th>Dosen</th>
                             <th>Topik</th>
                             <th>Status</th>
+                            <th>Tanggal</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -42,6 +43,7 @@
                             @else
                             <td>Selesai</td>
                             @endif
+                            <td>{{ $item->created_at }}</td>
                             <td>
                                 <a href="/mhs/consultation/show/{{ $item->id }}" class="btn btn-success btn-sm">
                                 <i class="fas fas fa-eye"></i>

@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/mhs', [HomeController::class, 'index']);
 
@@ -34,5 +34,7 @@ Route::post('/mhs/consultation/store', [ConsultationController::class, 'store'])
 Route::post('/mhs/consultation/mhs/store', [ConsultationController::class, 'storeMhs']);
 
 Route::get('/mhs/profile', [ProfileController::class, 'profile']);
+Route::post('/mhs/profile/update', [ProfileController::class, 'updateProfile']);
 Route::get('/mhs/password', [ProfileController::class, 'password']);
+Route::post('/mhs/password/update', [ProfileController::class, 'updatePassword']);
 

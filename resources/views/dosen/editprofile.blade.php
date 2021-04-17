@@ -22,36 +22,43 @@
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <form>
+                                    <form method="POST" action="/dsn/profile/update">
+                                        @csrf
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="font-weight-bold" for="name">Nama</label>
-                                                    <input type="text" class="form-control" id="name" value="{{ Auth::user()->name }}">
+                                                    <input type="text" class="form-control" id="name" name="name" value="{{ Auth::user()->name }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label class="font-weight-bold" for="npm">NPM</label>
-                                                    <input type="number" class="form-control" id="npm" value="1717051029">
+                                                    <label class="font-weight-bold" for="npm">NIP</label>
+                                                    <input type="number" class="form-control" name="nip" id="nip" value="{{ Auth::user()->npm_nisn }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="font-weight-bold" for="email">Email</label>
-                                                    <input type="email" class="form-control" id="email" value="{{ Auth::user()->email }}">
+                                                    <input type="email" class="form-control" id="email" name="email" value="{{ Auth::user()->email }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="font-weight-bold" for="notlpn">No Tlpn</label>
-                                                    <input type="number" class="form-control" id="notlpn">
+                                                    <div class="input-group">
+                                                        
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">+62</div>
+                                                        </div>
+                                                        <input type="number" class="form-control" name="notlpn" id="notlpn" value="{{ Auth::user()->phone }}">
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="font-weight-bold" for="password">Password</label>
-                                                    <input type="password" class="form-control" id="password">
+                                                    <input type="password" class="form-control" name="password" id="password">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">

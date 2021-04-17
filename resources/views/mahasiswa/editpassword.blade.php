@@ -22,24 +22,25 @@
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <form>
+                                    <form method="POST" action="/mhs/password/update">
+                                        @csrf
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="font-weight-bold" for="oldpassword">Passowrd Lama</label>
-                                                    <input type="password" class="form-control" id="oldpassword" value="Fauzi Riski">
+                                                    <input type="password" class="form-control" name="oldpassword" id="oldpassword">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="font-weight-bold" for="newpassword">Passowrd Baru</label>
-                                                    <input type="password" class="form-control" id="newpassword">
+                                                    <input type="password" class="form-control" name="newpassword" id="newpassword">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="font-weight-bold" for="repassword">Ulangi Password Baru</label>
-                                                    <input type="password" class="form-control" id="repassword">
+                                                    <input type="password" class="form-control" name="repassword" id="repassword">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">

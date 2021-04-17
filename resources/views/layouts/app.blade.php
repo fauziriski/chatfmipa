@@ -24,6 +24,9 @@
             content:" *";
             color:red;
         }
+        .error-feedback{
+            color: red;
+        }
     </style>
 </head>
 <body>

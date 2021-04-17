@@ -25,13 +25,22 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="row mt-2">
-                                                <div class="font-weight-bold col-md-6">Dosen</div>
-                                                <div class="col-md-6">198808072019031011 - {{ $chat->to_name }}</div>
+                                                <div class="font-weight-bold col-md-6">Mahasiswa</div>
+                                                <div class="col-md-6">{{ $chat->from->npm_nisn }} - {{ $chat->from_name }}</div>
                                             </div>
                                             <div class="row mt-2">
-                                                <div class="font-weight-bold col-md-6">Mahasiswa</div>
-                                                <div class="col-md-6">1717051029 - {{ $chat->from_name }}i</div>
+                                                <div class="font-weight-bold col-md-6">No Telp</div>
+                                                <div class="col-md-6">+62{{ $chat->from->phone }}</div>
                                             </div>
+                                            <div class="row mt-2">
+                                                <div class="font-weight-bold col-md-6">Program Studi</div>
+                                                <div class="col-md-6">{{ $chat->from->ps }}</div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="font-weight-bold col-md-6">Dosen</div>
+                                                <div class="col-md-6">{{ $chat->to->npm_nisn }} - {{ $chat->to_name }}</div>
+                                            </div>
+
                                         </div>
                                         <div class="col-md-6">
                                             <div class="row mt-2">
@@ -39,8 +48,14 @@
                                                 <div class="col-md-6">{{ $chat->topic }}</div>
                                             </div>
                                             <div class="row mt-2">
+                                                <div class="font-weight-bold col-md-6">Jenis Konsultasi</div>
+                                                <div class="col-md-6">Konsultasi {{ $chat->type }}</div>
+                                            </div>
+                                            <div class="row mt-2">
                                                 <div class="font-weight-bold col-md-6">Keterangan</div>
-                                                <div class="col-md-6">{{ $chat->information }}</div>
+                                                <div class="col-md-6">
+                                                    {{ $chat->information }}
+                                                </div>
                                             </div>
                                             <div class="row mt-2">
                                                 <div class="font-weight-bold col-md-6">Tanggal Konsultasi</div>

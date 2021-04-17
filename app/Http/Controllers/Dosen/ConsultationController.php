@@ -12,10 +12,15 @@ use App\Models\Chat;
 
 class ConsultationController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $user_id = Auth::user()->id;
-        $chat = Chat::where('from_id',$user_id)->orWhere('to_id', $user_id)->get();
+        $chat = Chat::where('from_id',$user_id)->orWhere('to_id', $user_id)->orderBy('created_at','desc')->get();
         $i = 1;
 
         return view('dosen.history', compact('chat', 'i'));

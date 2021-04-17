@@ -16,6 +16,7 @@ class Chat extends Model
         'invoice',
         'information',
         'topic',
+        'type',
         'status',
     ];
     public $timestamps = true;

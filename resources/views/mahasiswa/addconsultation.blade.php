@@ -36,6 +36,17 @@
                                                       </select>
                                                 </div>
                                             </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="font-weight-bold" for="exampleInputEmail1">Jenis Konsultasi</label>
+                                                    <select id="inputState" name="type" class="form-control">
+                                                        <option selected="true" disabled="disabled">Choose...</option>
+                                                        <option value="Pribadi/Keluarga">Pribadi/Keluarga</option>
+                                                        <option value="Akademik/Perkuliahan">Akademik/Perkuliahan</option>
+                                                        <option value="Keuangan">Keuangan</option>
+                                                      </select>
+                                                </div>
+                                            </div>
                                             {{-- <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="font-weight-bold" for="date_consul">Tanggal Konsultasi</label>
