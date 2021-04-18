@@ -110,7 +110,7 @@
                                                 <div class="col-md-7 col-sm-3 p-3 mt-2 mr-0" style="right: 0;border-radius:50px; border-top-right-radius: 0px;  background-color: #dff0d8">
                                                     <div class="row justify-content-between">
                                                         <div class="col-md-9">
-                                                            <p class="text-dark" id="name_dosen">1717051029 - {{ $item->from->name }}</p>
+                                                            <p class="text-dark" id="name_dosen">{{ $item->from->npm_nisn }} - {{ $item->from->name }}</p>
                                                         </div>
                                                         <div class="col-md-3">
                                                             <p class="text-dark" id="date_chat">{{ $item->created_at }}</p>
@@ -126,7 +126,7 @@
                                                 <div class="col-md-7 col-sm-7 p-3 mt-2" style="border-radius:50px; border-top-left-radius: 0px;  background-color: #D9EDF7">
                                                     <div class="row justify-content-between ">
                                                         <div class="col-md-9">
-                                                            <p class="text-dark" id="name_dosen">198808072019031011 - {{ $item->from->name }}</p>
+                                                            <p class="text-dark" id="name_dosen">{{ $item->from->npm_nisn }} - {{ $item->from->name }}</p>
                                                         </div>
                                                         <div class="col-md-3">
                                                             <p class="text-dark" id="date_chat">{{ $item->created_at }}</p>

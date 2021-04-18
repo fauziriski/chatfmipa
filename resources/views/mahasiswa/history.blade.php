@@ -33,9 +33,9 @@
                         @foreach ($chat as $item)
                         <tr>
                             <td>{{ $i++ }}</td>
-                            <td>1717051029</td>
+                            <td>{{ $item->from->npm_nisn }}</td>
                             <td>{{ $item->from->name }}</td>
-                            <td>198808072019031011</td>
+                            <td>{{ $item->to->npm_nisn }}</td>
                             <td>{{ $item->to->name }}</td>
                             <td>{{ $item->topic }}</td>
                             @if ($item->status == '1')

@@ -50,9 +50,9 @@ https://templatemo.com/tm-516-known
                     </button>
 
                     <!-- lOGO TEXT HERE -->
-                    <!-- <a href="#" class="navbar-brand">Known</a> -->
-            
-                    <img src="{{ asset('landingpage/images/logo.jpg') }}" width="250px" style="margin-top: 5px" class="img-responsive" alt="">
+                    <a href="/"> 
+                         <img src="{{ asset('landingpage/images/logo.jpg') }}" width="250px" style="margin-top: 5px" class="img-responsive" alt="">
+                    </a>
                </div>
 
                <!-- MENU LINKS -->
