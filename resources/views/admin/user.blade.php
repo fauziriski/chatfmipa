@@ -96,7 +96,7 @@
                                 data-toggle="modal" name="change-password" value="{{ $item->id }}" data-target="#exampleModal1">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="#" value="{{ $item->id }}" name="delete-user {{ $item->id }}" class="btn btn-danger btn-sm">
+                                <a href="#" value="{{ $item->id }}" name="delete-user" class="btn btn-danger btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>
                                 <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">

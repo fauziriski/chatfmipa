@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Message;
 use App\Models\User;
 use App\Models\Chat;
-
+use Alert;
 
 class ConsultationController extends Controller
 {
@@ -29,6 +29,10 @@ class ConsultationController extends Controller
     public function show($id)
     {
         $chat = Chat::where('id', $id)->first();
+        if (!$chat) {
+            Alert::error('Gagal','Konsultasi Tidak Ditemukan')->showConfirmButton('Ok', '#3085d6');
+            return redirect('mhs/consultation');
+        }
         $message = Message::where('invoice', $chat->invoice)->orderBy('created_at','desc')->get();
         return view('mahasiswa.detailconsultation', compact('chat', 'message'));
     }
@@ -37,12 +41,12 @@ class ConsultationController extends Controller
     {
         $role = DB::table('roles')->where('name', 'dosen')->first();
         $dosen = DB::table('model_has_roles')->where('role_id', $role->id)->get();
-        
         $user = array();
 
         foreach ($dosen as $key => $value) {
             $user[] = User::where('id', $value->model_id)->first();
         }
+        
         
         return view('mahasiswa.addconsultation', compact('user'));
     }

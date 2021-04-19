@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use App\Models\Message;
 use App\Models\User;
+use App\Models\Chat;
 use Alert;
 use DB;
 
@@ -75,7 +77,15 @@ class UserController extends Controller
 
     public function delete($id)
     {
-        $user = User::where('id', $id)->delete();
+        $user = User::where('id', $id)->first();
+        $chat = Chat::where('from_id',$user->id)->orWhere('to_id', $user->id)->get();
+        foreach ($chat as $key => $value) {
+            $message = Message::where('invoice', $value->invoice)->get();
+            $message->each->delete();
+        }
+        $chat->each->delete();
+        $dosen = DB::table('model_has_roles')->where('model_id', $id)->delete();
+        $user->delete();
 
         return response()->json('susscess');
     }

@@ -29,6 +29,10 @@ class ConsultationController extends Controller
     public function show($id)
     {
         $chat = Chat::where('id', $id)->first();
+        if (!$chat) {
+            Alert::error('Gagal','Konsultasi Tidak Ditemukan')->showConfirmButton('Ok', '#3085d6');
+            return redirect('dsn/consultation');
+        }
         $message = Message::where('invoice', $chat->invoice)->orderBy('created_at','desc')->get();
         return view('dosen.detailconsultation', compact('chat', 'message'));
     }
