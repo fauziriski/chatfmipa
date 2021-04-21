@@ -40,13 +40,26 @@
                             <td>{{ $item->from->name }}</td>
                             <td>{{ $item->topic }}</td>
                             @if ($item->status == '1')
-                            <td>Sedang Berjalan</td>
-                            @else
+                            <td>On Proses</td>
+                            @elseif($item->status == '2')
                             <td>Selesai</td>
+                            @elseif($item->status == '0')
+                            <td>Tidak Selesai</td>
+                            @else
+                            <td></td>
                             @endif
                             <td>{{ $item->created_at }}</td>
-                            <td><a href="/akses-admin/consultation/show/{{ $item->id }}" class="btn btn-success btn-sm">
-                                    <i class="fas fas fa-eye"></i>
+                            <td><a href="/akses-admin/consultation/show/{{ $item->id }}" class="btn btn-secondary btn-sm">
+                                <i class="fas fas fa-eye"></i>
+                                </a>
+                                <a href="#" name="complete" value="{{ $item->id }}" class="btn btn-success btn-sm">
+                                    <i class="fas fa-check"></i>
+                                </a>
+                                <a href="#" name="not-complete" value="{{ $item->id }}" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-window-close"></i>
+                                </a>
+                                <a href="#" name="in-progress" value="{{ $item->id }}" class="btn btn-secondary btn-sm">
+                                    <i class="fas fa-recycle"></i>
                                 </a>
                             </td>
                         </tr>
@@ -60,6 +73,101 @@
 
 </div>
 <!-- /.container-fluid -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+   
+     $(document).ready(function() {
+        $('a[name="complete"]').on('click', function() {
+            var id = $(this).attr('value');
+            swal({
+                title: "Apakah Anda Yakin?",
+                text: "Ingin Menyelesaikan Konfultasi",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        type: "GET",
+                        url: '/akses-admin/consultation/complete/' + encodeURI(id),
+                        dataType: "json",
+                        success: function(data) {
+                            swal(
+                                'Berhasil',
+                                'Konsultasi Selesai',
+                                'success'
+                            );
+                            location.reload();
+                        }
+                    });
+                }
+                else {
+                    swal("Pengguna Tidak Dihapus!");
+                }
+            });
+        });
+        $('a[name="not-complete"]').on('click', function() {
+            var id = $(this).attr('value');
+            swal({
+                title: "Apakah Anda Yakin?",
+                text: "Tidak Ingin Menyelesaikan Konfultasi",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        type: "GET",
+                        url: '/akses-admin/consultation/not-complete/' + encodeURI(id),
+                        dataType: "json",
+                        success: function(data) {
+                            swal(
+                                'Berhasil',
+                                'Konsultasi Tidak Selesai',
+                                'success'
+                            );
+                            location.reload();
+                        }
+                    });
+                }
+                else {
+                    swal("Pengguna Tidak Dihapus!");
+                }
+            });
+        });
+        $('a[name="in-progress"]').on('click', function() {
+            var id = $(this).attr('value');
+            swal({
+                title: "Apakah Anda Yakin?",
+                text: "Ingin mengubah status",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        type: "GET",
+                        url: '/akses-admin/consultation/in-progress/' + encodeURI(id),
+                        dataType: "json",
+                        success: function(data) {
+                            swal(
+                                'Berhasil',
+                                'Konsultasi Tidak Selesai',
+                                'success'
+                            );
+                            location.reload();
+                        }
+                    });
+                }
+                else {
+                    swal("Pengguna Tidak Dihapus!");
+                }
+            });
+        });
+     
+     });
+</script>
 
 
 @endsection

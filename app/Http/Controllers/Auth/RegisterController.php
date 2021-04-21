@@ -57,7 +57,6 @@ class RegisterController extends Controller
             'no_telp' => ['required'],
             'gender' => ['required'],
             'dosen_pa' => ['required', 'string', 'max:255'],
-            'dosen_ta' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }

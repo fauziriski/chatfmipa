@@ -68,7 +68,11 @@
                                             <h6 class="m-0 font-weight-bold text-primary">Percakapan</h6>
                                         </div>
                                         <div class="col-md-1">
+                                            @if($chat->status == '0' || $chat->status == '2')
+                                                
+                                            @else
                                             <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Tambah Chat</button>
+                                            @endif
                                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                   <div class="modal-content">
@@ -118,6 +122,7 @@
                                                         <div class="col-md-12">
                                                             <p class="text-dark font-weight-bold text" id="dosen_text">{{ $item->text }}</p>
                                                         </div>
+
                                                     </div>
                                                     
                                                 </div>
@@ -134,6 +139,9 @@
                                                         </div>
                                                         <div class="col-md-12">
                                                             <p class="text-dark font-weight-bold text" id="dosen_text">{{ $item->text }}</p>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <a style="color: grey" href="/dsn/consultation/delete-message/{{$item->id}}">[Hapus Pesan]</a>
                                                         </div>
                                                     </div>
                                                 </div>

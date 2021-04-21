@@ -160,7 +160,7 @@ https://templatemo.com/tm-516-known
                               </span>
                               @enderror
 
-                              <input id="dosen_ta" type="text" class="form-control @error('dosen_ta') is-invalid @enderror" name="dosen_ta" value="{{ old('dosen_ta') }}" placeholder="Dosen TA/Skripsi/Tesis" required autocomplete="dosen_ta">
+                              <input id="dosen_ta" type="text" class="form-control @error('dosen_ta') is-invalid @enderror" name="dosen_ta" value="{{ old('dosen_ta') }}" placeholder="Dosen TA/Skripsi/Tesis" autocomplete="dosen_ta">
 
                                 @error('dosen_ta')
                                     <span class="invalid-feedback" role="alert">

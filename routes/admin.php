@@ -22,6 +22,10 @@ Route::get('/', [HomeController::class, 'index'])->name('dashboard');
 
 Route::get('/consultation', [ConsultationController::class, 'index']);
 Route::get('/consultation/show/{id}', [ConsultationController::class, 'show']);
+Route::get('/consultation/complete/{id}', [ConsultationController::class, 'complete']);
+Route::get('/consultation/not-complete/{id}', [ConsultationController::class, 'notComplete']);
+Route::get('/consultation/in-progress/{id}', [ConsultationController::class, 'inProgresss']);
+Route::get('/consultation/delete-message/{id}', [ConsultationController::class, 'deleteMessage']);
 
 Route::get('/user', [UserController::class, 'index']);
 Route::post('/user/add-dosen', [UserController::class, 'storeDosen']);

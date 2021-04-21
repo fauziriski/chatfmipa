@@ -55,4 +55,36 @@ class ConsultationController extends Controller
 
         return redirect('/dsn/consultation/show/'. $chat->id);
     }
+
+    public function complete($id)
+    {
+        $chat = Chat::where('id', $id)->first();
+        $chat->update([
+            'status' => '2'
+        ]);
+
+        return response()->json('susscess');
+    }
+
+    public function notComplete($id)
+    {
+        $chat = Chat::where('id', $id)->first();
+        $chat->update([
+            'status' => '0'
+        ]);
+
+        return response()->json('susscess');
+    }
+
+    public function deleteMessage($id)
+    {
+        $message = Message::where('id', $id)->first();
+        $invoice = $message->chat_id;
+        $message->delete();
+
+        return redirect('/dsn/consultation/show/'. $invoice);
+
+    }
+
+    
 }

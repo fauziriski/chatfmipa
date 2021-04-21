@@ -4,8 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-// class AddNullableToUsersTable extends Migration
-// {
+class AddNullableToUsersTable extends Migration
+{
 //     /**
 //      * Run the migrations.
 //      *
@@ -29,4 +29,4 @@ use Illuminate\Support\Facades\Schema;
 //             $table->string('gender')->change();
 //         });
 //     }
-// }
+}

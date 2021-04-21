@@ -23,6 +23,9 @@ Route::get('/consultation', [ConsultationController::class, 'index']);
 Route::get('/consultation/show/{id}', [ConsultationController::class, 'show']);
 Route::get('/consultation/create', [ConsultationController::class, 'create']);
 Route::post('/consultation/dsn/store', [ConsultationController::class, 'storeDsn']);
+Route::get('/consultation/complete/{id}', [ConsultationController::class, 'complete']);
+Route::get('/consultation/not-complete/{id}', [ConsultationController::class, 'notComplete']);
+Route::get('/consultation/delete-message/{id}', [ConsultationController::class, 'deleteMessage']);
 
 Route::get('/profile', [ProfileController::class, 'profile']);
 Route::post('/profile/update', [ProfileController::class, 'profileUpdate']);

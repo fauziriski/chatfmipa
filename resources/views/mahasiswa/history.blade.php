@@ -39,9 +39,13 @@
                             <td>{{ $item->to->name }}</td>
                             <td>{{ $item->topic }}</td>
                             @if ($item->status == '1')
-                            <td>Sedang Berjalan</td>
-                            @else
+                            <td>On Proses</td>
+                            @elseif($item->status == '2')
                             <td>Selesai</td>
+                            @elseif($item->status == '0')
+                            <td>Tidak Selesai</td>
+                            @else
+                            <td></td>
                             @endif
                             <td>{{ $item->created_at }}</td>
                             <td>

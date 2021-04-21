@@ -40,6 +40,20 @@ https://templatemo.com/tm-516-known
 
      <!-- MENU -->
      <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="py-1 bg-primary">
+               <div class="container">
+                 <div class="row justify-content-center">
+                   <div class="col-lg-9">
+                     <div class="row">
+                       <div class="col-md-9">
+                         <span class="text">bimbingan.konsultasi@fmipa.unila.ac.id</span>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+
           <div class="container">
 
                <div class="navbar-header">
@@ -316,7 +330,7 @@ https://templatemo.com/tm-516-known
                               </span>
                               @enderror
 
-                              <input id="dosen_ta" type="text" class="form-control @error('dosen_ta') is-invalid @enderror" name="dosen_ta" value="{{ old('dosen_ta') }}" placeholder="Dosen TA/Skripsi/Tesis" required autocomplete="dosen_ta">
+                              <input id="dosen_ta" type="text" class="form-control @error('dosen_ta') is-invalid @enderror" name="dosen_ta" value="{{ old('dosen_ta') }}" placeholder="Dosen TA/Skripsi/Tesis" autocomplete="dosen_ta">
 
                                 @error('dosen_ta')
                                     <span class="invalid-feedback" role="alert">

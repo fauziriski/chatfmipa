@@ -32,4 +32,46 @@ class ConsultationController extends Controller
         $message = Message::where('invoice', $chat->invoice)->orderBy('created_at','desc')->get();
         return view('admin.detailconsultation', compact('chat', 'message'));
     }
+
+    public function complete($id)
+    {
+        $chat = Chat::where('id', $id)->first();
+        $chat->update([
+            'status' => '2'
+        ]);
+
+        return response()->json('susscess');
+    }
+
+    public function notComplete($id)
+    {
+        $chat = Chat::where('id', $id)->first();
+        $chat->update([
+            'status' => '0'
+        ]);
+
+        return response()->json('susscess');
+    }
+
+    public function inProgresss($id)
+    {
+        $chat = Chat::where('id', $id)->first();
+        $chat->update([
+            'status' => '1'
+        ]);
+
+        return response()->json('susscess');
+    }
+
+    public function deleteMessage($id)
+    {
+        $message = Message::where('id', $id)->first();
+        $invoice = $message->chat_id;
+        $message->delete();
+
+        return redirect('/akses-admin/consultation/show/'. $invoice);
+
+    }
+
+    
 }
