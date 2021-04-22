@@ -46,7 +46,7 @@ https://templatemo.com/tm-516-known
                    <div class="col-lg-9">
                      <div class="row">
                        <div class="col-md-9">
-                         <span class="text">bimbingan.konsultasi@fmipa.unila.ac.id</span>
+                         <span class="text">konsultasi.bimbingan@fmipa.unila.ac.id</span>
                        </div>
                      </div>
                    </div>
