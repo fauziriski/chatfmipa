@@ -280,6 +280,7 @@ section {
     padding: 12px 0;
     margin-bottom: 0;
     padding: 0;
+    text-align: left;
 }
 
 .custom-navbar .navbar-brand {

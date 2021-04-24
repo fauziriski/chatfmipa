@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-     <title>Bimbingan dan Konseling</title>
+     <title>Masuk</title>
 <!-- 
 
 Known Template 
@@ -65,7 +65,7 @@ https://templatemo.com/tm-516-known
 
                     <!-- lOGO TEXT HERE -->
                     <a href="/"> 
-                         <img src="{{ asset('landingpage/images/logo.jpg') }}" width="250px" style="margin-top: 5px" class="img-responsive" alt="">
+                    <img src="{{ asset('landingpage/images/logoHead.png') }}" width="300px" style="margin-top: 5px" class="img-responsive" alt="">
                     </a>
                </div>
 

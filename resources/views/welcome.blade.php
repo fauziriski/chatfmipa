@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-     <title>Bimbingan dan Konseling</title>
+     <title>Konsultasi dan Bimbingan</title>
 <!-- 
 
 Known Template 
@@ -42,15 +42,7 @@ https://templatemo.com/tm-516-known
      <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
           <div class="py-1 bg-primary">
                <div class="container">
-                 <div class="row justify-content-center">
-                   <div class="col-lg-9">
-                     <div class="row">
-                       <div class="col-md-9">
-                         <span class="text">konsultasi.bimbingan@fmipa.unila.ac.id</span>
-                       </div>
-                     </div>
-                   </div>
-                 </div>
+                     <span class="text">konsultasi.bimbingan@fmipa.unila.ac.id</span>
                </div>
           </div>
 
@@ -66,7 +58,7 @@ https://templatemo.com/tm-516-known
                     <!-- lOGO TEXT HERE -->
                     <!-- <a href="#" class="navbar-brand">Known</a> -->
             
-                    <img src="{{ asset('landingpage/images/logo.jpg') }}" width="250px" style="margin-top: 5px" class="img-responsive" alt="">
+                    <img src="{{ asset('landingpage/images/logoHead.png') }}" width="300px" style="margin-top: 5px" class="img-responsive" alt="">
                </div>
 
                <!-- MENU LINKS -->
@@ -141,7 +133,7 @@ https://templatemo.com/tm-516-known
                                    <div class="container">
                                         <div class="col-md-6 col-sm-12">
                                              <h1>KONSULTASI DAN BIMBINGAN MAHASISWA</h1>
-                                             <h3>Konseling merupakan profesi yang sangat erat hubungannya dengan kehidupan manusia secara menyeluruh sehingga menjadi seorang konselor tidak cukup hanya menguasai ilmu dan keterampilan tetapi memerlukan pengembangan pribadi yang matang baik dalam menyelesaikan masalah maupun membina hubungan antara manusia</h3>
+                                             <h3>Konsultasi merupakan profesi yang sangat erat hubungannya dengan kehidupan manusia secara menyeluruh sehingga menjadi seorang konselor tidak cukup hanya menguasai ilmu dan keterampilan tetapi memerlukan pengembangan pribadi yang matang baik dalam menyelesaikan masalah maupun membina hubungan antara manusia</h3>
                                              <a href="#feature" class="section-btn btn btn-default smoothScroll">Mulai</a>
                                         </div>
                                    </div>
@@ -210,11 +202,11 @@ https://templatemo.com/tm-516-known
                <div class="row">
                <div class="col-md-12 col-sm-12">
                     <div class="section-title">
-                        <h2 style="text-align: center;">Bimbingan dan Konseling<hr>
-                            <small style="line-height:1.5;">Bimbingan dan konseling adalah dua pengertian yang berhubungan dengan makna pemberian bantuan. Bimbingan dapat diberikan kepada mahasiswa atau kelompok mahasiswa yang mengalami kesulitan dalam pendidikan, memilih jurusan, maupun kesulitan pribadi serta penyesuaian diri dengan masyarakat dan lingkungannya.<br><br>
+                        <h2 style="text-align: center;"> Konsultasi dan Bimbingan<hr>
+                            <small style="line-height:1.5;">Konsultasi dan Bimbingan adalah dua pengertian yang berhubungan dengan makna pemberian bantuan. Bimbingan dapat diberikan kepada mahasiswa atau kelompok mahasiswa yang mengalami kesulitan dalam pendidikan, memilih jurusan, maupun kesulitan pribadi serta penyesuaian diri dengan masyarakat dan lingkungannya.<br><br>
+                            Konsultasi adalah suatu situasi bantuan penyelesaian masalah yang bersifat terbuka dengan bertemu muka yang diberikan oleh tenaga profesional.<br><br>
                             Bimbingan adalah bantuan yang dapat diberikan oleh penasehat akademik kepada mahasiswa agar mereka dapat mengambil keputusan berkaitan dengan kegiatan akademiknya dan menentukan tujuan karirnya.<br><br>
-                            Adapun pengertian konseling adalah suatu situasi bantuan penyelesaian masalah yang bersifat terbuka dengan bertemu muka yang diberikan oleh tenaga profesional.<br><br>
-                            Dapat disimpulkan bahwa bimbingan dan konseling merupakan istilah yang berbeda maknanya tetapi berhubungan erat, yaitu bantuan kepada mahasiswa atau sekelompok mahasiswa dalam proses perkembangan kearah kedewasaan dan bantuan penyelesaian masalah. Bimbingan lebih bersifat preventif, sedangkan konseling lebih bersifat kuratif.</small>
+                            Dapat disimpulkan bahwa bimbingan dan konsultasi merupakan istilah yang berbeda maknanya tetapi berhubungan erat, yaitu bantuan kepada mahasiswa atau sekelompok mahasiswa dalam proses perkembangan kearah kedewasaan dan bantuan penyelesaian masalah. Bimbingan lebih bersifat preventif, sedangkan konsultasi lebih bersifat kuratif.</small>
                         </h2><br><br>
                     </div>
                 </div>
@@ -222,7 +214,7 @@ https://templatemo.com/tm-516-known
                          <div class="about-info">
                              <figure>
                                    <figcaption>
-                                        <h3>Tujuan Bimbingan dan Konseling</h3><br>
+                                        <h3>Tujuan</h3><br>
                                         <p>(1) Menyesuaikan diri dengan kehidupan kampus<br>
                                          (2) Menyelesaikan masalah pribadi secara sehat dan konstruktif <br>(3)	Tumbuh dan kembang dengan optimal.</p>
                                    </figcaption>
@@ -231,11 +223,11 @@ https://templatemo.com/tm-516-known
                               <figure>
                                    <figcaption>
                                         <h3>Ruang Lingkup</h3><br>
-                                        <p>(1) bimbingan pengembangan diri <br>
-                                        (2) bimbingan akademik <br>
-                                        (3) konseling akademik <br>
-                                        (4) bimbingan karir<br>
-                                        (5) konseling pribadi.</p>
+                                        <p>(1) Bimbingan pengembangan diri <br>
+                                        (2) Bimbingan akademik <br>
+                                        (3) Konsultasi akademik <br>
+                                        (4) Bimbingan karir<br>
+                                        (5) Konsultasi pribadi.</p>
                                    </figcaption>
                               </figure>
 
@@ -375,8 +367,8 @@ https://templatemo.com/tm-516-known
                                         <div class="courses-thumb">
                                              <div class="courses-info">
                                                   <div class="courses-author">
-                                                       <img src="{{ asset('landingpage/images/author-image1.jpg') }}" class="img-responsive" alt="">
-                                                       <span>Amir Supriyanto, M.Si.</span>
+                                                       <img src="{{ asset('landingpage/images/1.jpg') }}" class="img-responsive" alt="">
+                                                       <span>Drs. Amir Supriyanto M.Si.</span>
                                                   </div><br>
                                                   <div class="courses-price">
                                                        <a href="#"><span>Ketua</span></a>
@@ -390,8 +382,8 @@ https://templatemo.com/tm-516-known
                                         <div class="courses-thumb">
                                              <div class="courses-info">
                                                   <div class="courses-author">
-                                                       <img src="{{ asset('landingpage/images/author-image2.jpg') }}" class="img-responsive" alt="">
-                                                       <span>Dr. Ilim</span>
+                                                       <img src="{{ asset('landingpage/images/2.jpg') }}" class="img-responsive" alt="">
+                                                       <span>Dr. Dra. Ilim M.S.</span>
                                                   </div><br>
                                                   <div class="courses-price free">
                                                        <a href="#"><span>Sekretaris</span></a>
@@ -405,8 +397,8 @@ https://templatemo.com/tm-516-known
                                         <div class="courses-thumb">
                                              <div class="courses-info">
                                                   <div class="courses-author">
-                                                       <img src="{{ asset('landingpage/images/author-image2.jpg') }}" class="img-responsive" alt="">
-                                                       <span>Dr. Endah Setyaningrum</span>
+                                                       <img src="{{ asset('landingpage/images/3.jpg') }}" class="img-responsive" alt="">
+                                                       <span>Dra. Endah Setyaningrum</span>
                                                   </div>
                                                   <div class="courses-price free">
                                                        <a href="#"><span>Divisi Kerjasama</span></a>
@@ -420,8 +412,8 @@ https://templatemo.com/tm-516-known
                                         <div class="courses-thumb">
                                              <div class="courses-info">
                                                   <div class="courses-author">
-                                                       <img src="{{ asset('landingpage/images/author-image2.jpg') }}" class="img-responsive" alt="">
-                                                       <span>Bambang Hermanto, M.Cs.</span>
+                                                       <img src="{{ asset('landingpage/images/4.jpg') }}" class="img-responsive" alt="">
+                                                       <span>Bambang Hermanto, S.Kom., M.Cs.</span>
                                                   </div>
                                                   <div class="courses-price free">
                                                        <a href="#"><span>Divisi Pengembangan dan Pelatihan</span></a>
@@ -435,8 +427,8 @@ https://templatemo.com/tm-516-known
                                         <div class="courses-thumb">
                                              <div class="courses-info">
                                                   <div class="courses-author">
-                                                       <img src="{{ asset('landingpage/images/author-image2.jpg') }}" class="img-responsive" alt="">
-                                                       <span>Widiarti, M.Si.</span>
+                                                       <img src="{{ asset('landingpage/images/5.jpg') }}" class="img-responsive" alt="">
+                                                       <span>Widiarti S.Si. M.Si.</span>
                                                   </div>
                                                   <div class="courses-price free">
                                                        <a href="#"><span>Divisi Pengentasan dan Tindak lanjut Masalah</span></a>
@@ -498,7 +490,7 @@ https://templatemo.com/tm-516-known
                               </div>
                               <address>
                                    <p>+62 721 704625</p>
-                                   <p><a href="#">office@fmipa.unila.ac.id</a></p>
+                                   <p><a href="#">konsultasi.bimbingan@fmipa.unila.ac.id</a></p>
                               </address>
 
                               <div class="footer_menu">
