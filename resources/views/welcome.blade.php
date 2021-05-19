@@ -478,7 +478,7 @@ https://templatemo.com/tm-516-known
                               </ul> -->
 
                               <div class="copyright-text"> 
-                                   <p>Copyright &copy; 2021 Tim iCoffee</p>                 
+                                   <p>Copyright &copy; 2021 Tim Ilmu Komputer</p>                 
                               </div>
                          </div>
                     </div>
